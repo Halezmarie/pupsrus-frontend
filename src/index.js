@@ -15,13 +15,15 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhanceStore = compose()
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+//store is where I am storing my data globally.
+//then I am sending an action object to my reducer and then the reducer takes in the action object and decides what will update the current store. It will return a new version of that store 
 
 
 
 
 //Have to wrap the app and provider so that the store is global to all the other components/containers that I create 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <App/>
   </Provider>,
   document.getElementById('root')
