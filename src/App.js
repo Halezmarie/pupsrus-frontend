@@ -1,18 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {fetchToys} from './actions/fetchToys'
+import ToysContainer from './containers/ToysContainer'
+
 // since I did export default I need fetchToys in curly brackets
 
 class App extends React.Component {
-  
-  componentDidMount() {
-    
-  }
+
 
   render() {
     return(
       <div className="App">
-        App
+        <ToysContainer/>
       </div>
     );
   }
