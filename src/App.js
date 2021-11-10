@@ -1,6 +1,7 @@
 import React from 'react';
 
 class App extends React.Component {
+  
   render() {
     return(
       <div className="App">
@@ -9,6 +10,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;
