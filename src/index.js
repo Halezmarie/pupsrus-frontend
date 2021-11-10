@@ -4,6 +4,7 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import App from './App';
+import toyReducer from './reducers/toyReducer'
 
 //compose allows you to chain together different types of middlewares into one that I can just pass in one argument
 //set up our store so that means I need to import create store from REDUX
@@ -12,9 +13,8 @@ import App from './App';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //enhancers equals these devtools or it equals compose
 
-const enhanceStore = compose()
-window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+
+let store = createStore(toyReducer, composeEnhancers(applyMiddleware(thunk)))
 //store is where I am storing my data globally.
 //then I am sending an action object to my reducer and then the reducer takes in the action object and decides what will update the current store. It will return a new version of that store 
 
