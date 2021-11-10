@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import App from './App';
 
+//compose allows you to chain together different types of middlewares into one that I can just pass in one argument
 //set up our store so that means I need to import create store from REDUX
 //any component I wrap in provider will have access to the redux store
+
 let store = createStore(reducer, applyMiddleware(thunk))
 
 
 
 
-// Have to wrap the app and provider so that the store is global to all the other components/containers that I create 
+//Have to wrap the app and provider so that the store is global to all the other components/containers that I create 
 ReactDOM.render(
   <Provider>
     <App/>
