@@ -9,7 +9,12 @@ import App from './App';
 //set up our store so that means I need to import create store from REDUX
 //any component I wrap in provider will have access to the redux store
 
-let store = createStore(reducer, applyMiddleware(thunk))
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+//enhancers equals these devtools or it equals compose
+
+const enhanceStore = compose()
+window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
 
 
 
