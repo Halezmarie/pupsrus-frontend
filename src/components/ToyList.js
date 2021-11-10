@@ -1,8 +1,8 @@
-import React from 'core-js/library/fn/reflect/es7/metadata'
+import React from 'react'
 // I need 5 functional components 
 
 // rendering a list of toys
-const Toys = (props) => {
+const ToyList = (props) => {
 
     return (
 <div>
@@ -11,4 +11,4 @@ const Toys = (props) => {
 
     )
 }
-export default Toys 
+export default ToyList
