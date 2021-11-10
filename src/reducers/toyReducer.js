@@ -7,9 +7,4 @@
 export default function toyReducer(state = {toys: []}, action) {
 
 
-    debugger;
-    
-    return state
-
-
 }
