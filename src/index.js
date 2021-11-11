@@ -21,7 +21,8 @@ let store = createStore(toyReducer, composeEnhancers(applyMiddleware(thunk)))
 
 
 
-//Have to wrap the app and provider so that the store is global to all the other components/containers that I create 
+//Have to wrap the app and provider so that the store is global to all the other components/containers that I create.
+// giving access to the redux store 🛍
 ReactDOM.render(
   <Provider store={store}>
     <App/>
