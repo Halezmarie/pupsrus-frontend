@@ -10,6 +10,7 @@ import ToyForm from '../components/ToyForm'
 class  ToysContainer extends React.Component {
 
     // need to add it to the connect to have access to fetchToys with props
+    // fetch the toys, without this nothing can be accessed 
     componentDidMount(){
         this.props.fetchToys()
 
@@ -21,7 +22,7 @@ class  ToysContainer extends React.Component {
 
         <div>
             <ToyList/>
-             <ToyForm/>
+             <ToyForm toys={this.props.toys}/>
         </div>
         )
     }   
@@ -29,6 +30,7 @@ class  ToysContainer extends React.Component {
 
 // to see it 
 // needs access to toys from our store though props... use componentdidmount, fetch 
+//getting the props here for our redux store and then we are accessing them through the props from the component ^ and then accessing them through <ToyForm toys={this.props.toys}/>
 const mapStateToProps = state => {
     return {
         toys: state.toys
