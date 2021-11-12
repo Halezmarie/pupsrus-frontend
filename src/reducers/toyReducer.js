@@ -6,5 +6,11 @@
 // pass in state and then set the initial state so it is like an array, so I can have an object key pointing to an array
 export default function toyReducer(state = {toys: []}, action) {
 
-    return state
+    switch (action.type) {
+    case 'FETCH_TOYS':
+        return {toys: action.payload} // new redux state
+    default:
+        return state
+
+    }
 }

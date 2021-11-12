@@ -10,5 +10,7 @@ export function fetchToys() {
     }))
     }
 }
+//dispatching to the reducer with a type fetch toys, payload of toys(data)
+
 
 // I imported thunk because it returns a function from the action creator and you can use it in other places easily. When I want to make a synchronous request like a fetch request. I can add dispatch() on my fetch request so that the connect will allow the fetch request to finish  before I dispatch anything to the reducer (because it is impatient and wants a response ASAP). I also need thunk because we have to access the backend somehow. If I did not have a backend, thunk would not be needed. 
