@@ -6,9 +6,11 @@ const ToyList = (props) => {
 
     return (
 <div>
-    Toys
+    {props.toys.map(toy => <li key={toy.id}>{toy.name} - {toy.description} - {toy.image_url} </li>
+        )}
 </div>
 
     )
+    // need props first because it is the info being passed from the toy container to my child component of toys
 }
 export default ToyList

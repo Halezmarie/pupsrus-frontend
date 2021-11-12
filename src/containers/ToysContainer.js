@@ -13,7 +13,6 @@ class  ToysContainer extends React.Component {
     // fetch the toys, without this nothing can be accessed 
     componentDidMount(){
         this.props.fetchToys()
-
     }
 
     render () {
@@ -21,8 +20,8 @@ class  ToysContainer extends React.Component {
         return (
 
         <div>
-            <ToyList/>
-             <ToyForm toys={this.props.toys}/>
+            <ToyForm/>
+             <ToyList toys={this.props.toys}/>
         </div>
         )
     }   
