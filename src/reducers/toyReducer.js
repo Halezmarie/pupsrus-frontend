@@ -8,7 +8,7 @@ export default function toyReducer(state = {toys: []}, action) {
 
     switch (action.type) {
     case 'FETCH_TOYS':
-        return {toys: action.payload} // new redux state
+        return {toys: action.payload} // new redux state with the data from the fetch request
     default:
         return state
 

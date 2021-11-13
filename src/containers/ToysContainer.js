@@ -11,6 +11,7 @@ class  ToysContainer extends React.Component {
 
     // need to add it to the connect to have access to fetchToys with props
     // fetch the toys, without this nothing can be accessed 
+    //everytime it triggers it will activate ^
     componentDidMount(){
         this.props.fetchToys()
     }
@@ -20,7 +21,7 @@ class  ToysContainer extends React.Component {
         return (
 
         <div>
-            <ToyForm/>
+            <ToyForm/><br/>
              <ToyList toys={this.props.toys}/>
         </div>
         )
@@ -38,3 +39,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchToys}) (ToysContainer)
+// calling on fetchToys which takes us to the fetch request, nothing would happen w/o it
