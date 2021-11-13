@@ -9,10 +9,13 @@ import React from 'react'
   //leaving it local 
           
 
-
+    // the event target is being changed based on the user input
+    // brackets because it is an object and it needs to show it's a key 
+    // [] basically reads the value that is associated with and then sets it as a key
     handleChange = (event) => {
-
-        debugger;
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
     
 
@@ -26,8 +29,8 @@ import React from 'react'
                <label>Description </label>
                <input type='text' placeholder='Description of the toy...' value={this.state.description} name="description" onChange={this.handleChange} /><br/>
                <label>Image </label>
-               <input type='text' placeholder='Picture of the toy...' value={this.state.image_url} name="image" onChange={this.handleChange}/><br/>
-               
+               <input type='text' placeholder='Picture of the toy...' value={this.state.image_url} name="image_url" onChange={this.handleChange}/><br/>
+               <input type="submit"/>
            </form>
        </div>
         )
