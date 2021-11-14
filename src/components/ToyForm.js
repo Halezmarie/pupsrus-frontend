@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
     class ToyForm extends React.Component {
         state = {
@@ -18,12 +19,18 @@ import React from 'react'
         })
     }
     
+    // data needs to go to my database with each submit from the user
+    // when there is a change I am updating my state, my state will be getting sent to createToy.js as the argument. Data will be coming from  ^ the state 
+    handleSubmitButton = () => {
+
+
+    }
 
 
     render() {
         return (
        <div>
-           <form>
+           <form onSubmit={this.handleSubmitButton}>
                <label>Name: </label>
                <input type='text' placeholder='Toy name...' value={this.state.name} name="name" onChange={this.handleChange} /><br/>
                <label>Description </label>
@@ -37,4 +44,4 @@ import React from 'react'
     }
 }
 
-export default ToyForm
+export default connect()(ToyForm)
