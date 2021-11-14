@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {createToy} from '../actions/createToy'
 
     class ToyForm extends React.Component {
         state = {
@@ -21,11 +22,10 @@ import {connect} from 'react-redux'
     
     // data needs to go to my database with each submit from the user
     // when there is a change I am updating my state, my state will be getting sent to createToy.js as the argument. Data will be coming from  ^ the state 
-    handleSubmitButton = () => {
-
-
+    handleSubmitButton = (event) => {
+        event.preventDefault()
+        this.props.createToy(this.state)
     }
-
 
     render() {
         return (
@@ -44,4 +44,7 @@ import {connect} from 'react-redux'
     }
 }
 
-export default connect()(ToyForm)
+export default connect(null, {createToy})(ToyForm)
+// directly importing it b/c I have thunk I can call the dispatch etc
+//  creating the data that is sent to the backend and then update the redux store
+// adding something NEW to the store, I dont need maptostateprops so it is NULL
