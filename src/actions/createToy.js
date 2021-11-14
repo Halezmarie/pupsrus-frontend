@@ -9,6 +9,8 @@ export const createToy = (toydata) => {
             method: 'POST',
             body: JSON.stringify(toydata)
         })
+        .then(res => res.json())
+        .then(newtoy => dispatch ({type: 'NEW_TOY', payload: newtoy}))
 
 
     }
