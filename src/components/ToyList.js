@@ -1,4 +1,5 @@
 import React from 'react'
+import DisplayToy from './DisplayToy'
 
 // I need 5 functional components 
 
@@ -6,10 +7,11 @@ import React from 'react'
 
 const ToyList = (props) => {
 
+    // iterating over my data and making a list to display to the user
     return (
 <div>
-    {props.toys.map(toy => <li key={toy.id}>{toy.name} - {toy.description} -  <img src={toy.image_url}></img> </li>
-        )}
+    {props.toys.map(toy => 
+    <div key={toy.id}><DisplayToy toy={toy}/></div> )}
 </div>
     )
     // need props first because it is the info being passed from the toy container to my child component of toys

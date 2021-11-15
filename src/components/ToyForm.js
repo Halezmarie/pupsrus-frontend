@@ -25,7 +25,15 @@ import {createToy} from '../actions/createToy'
     handleSubmitButton = (event) => {
         event.preventDefault()
         this.props.createToy(this.state)
+        this.setState({
+            name: '',
+            description: '',
+            image_url: ''
+        })
     }
+// have to send the state back as empty strings so the value is blank after the user enters something
+// setState is asynchronous
+
 
     render() {
         return (
