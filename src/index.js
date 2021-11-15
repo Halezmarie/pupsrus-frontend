@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import App from './App';
+import {BrowserRouter as Router} from 'react-router-dom';
 import toyReducer from './reducers/toyReducer'
+import App from './App';
 
 //compose allows you to chain together different types of middlewares into one that I can just pass in one argument
 //set up our store so that means I need to import create store from REDUX
@@ -25,7 +26,9 @@ let store = createStore(toyReducer, composeEnhancers(applyMiddleware(thunk)))
 // giving access to the redux store 🛍
 ReactDOM.render(
   <Provider store={store}>
+    <Router>
     <App/>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
