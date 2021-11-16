@@ -2,9 +2,11 @@
 
 import React from 'react'
 import {connect} from 'react-redux'
+import {Route, Switch} from 'react-router-dom'
 import { fetchToys } from '../actions/fetchToys'
 import ToyList from '../components/ToyList'
 import ToyForm from '../components/ToyForm'
+import DisplayToy from '../components/DisplayToy'
 
 // must always have a render 
 class  ToysContainer extends React.Component {
@@ -16,13 +18,18 @@ class  ToysContainer extends React.Component {
         this.props.fetchToys()
     }
 
+
+    //  in order for the routes to haccess to the props that they need my routes (need to be in a component) that can send the props through the route to the components 
     render () {
 
         return (
 
         <div>
-            <ToyForm/><br/>
-             <ToyList toys={this.props.toys}/>
+            <Switch>
+            <Route path='/toys/new' component={ToyForm}/>
+            <Route path='/toys/:id' render={(routerProps) => <DisplayToy {...routerProps} toys={this.props.toys}/>}/>
+            <Route exact path='/toys' render={(routerProps) => <DisplayToy {...routerProps} toys={this.props.toys}/>}/>
+            </Switch>
         </div>
         )
     }   

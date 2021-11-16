@@ -1,4 +1,4 @@
-export const createToy = (toydata) => {
+export const createToy = (toyData) => {
   
     return (dispatch) => {
         fetch('http://localhost:3000/api/v1/toys', {
@@ -7,7 +7,7 @@ export const createToy = (toydata) => {
                 'Accept': 'application/json',
             },
             method: 'POST',
-            body: JSON.stringify(toydata)
+            body: JSON.stringify(toyData)
         })
         .then(res => res.json())
         .then(newtoy => dispatch ({type: 'NEW_TOY', payload: newtoy}))
