@@ -26,15 +26,15 @@ class  ToysContainer extends React.Component {
 
         <div>
             <Switch>
-            <Route path='/toys/new' render={(routeProps) => <ToyForm {...routeProps}/>}/>
-            <Route path='/toys/:id' render={(routeProps) => <DisplayToy {...routeProps} toys={this.props.toys} />} />
-            <Route exact path='/toys' render={(routerProps) => <ToyList {...routerProps} toys={this.props.toys}/>}/>
+                <Route path='/toys/new' render={(routeProps) => <ToyForm {...routeProps}/>}/>
+                <Route path='/toys/:id' render={(routeProps) => <DisplayToy {...routeProps} toys={this.props.toys} />} />
+                <Route path='/toys' render={(routerProps) => <ToyList {...routerProps} toys={this.props.toys}/>}/>
             </Switch>
         </div>
         )
     }   
 }
-
+// switch it finding the exact match 
 // to see it 
 // needs access to toys from our store though props... use componentdidmount, fetch 
 //getting the props here for our redux store and then we are accessing them through the props from the component ^ and then accessing them through <ToyForm toys={this.props.toys}/>

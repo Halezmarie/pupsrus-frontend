@@ -11,7 +11,6 @@ let toy = props.toys[props.match.params.id - 1 ]
     <div>
         {toy ? toy.name : null} - {toy ? toy.description : null} 
         <img src={toy? toy.image_url : null}/>
-
   </div>
   
     )
