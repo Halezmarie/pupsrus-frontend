@@ -4,9 +4,11 @@ const Reviews = (props) => {
 
     return(
         <div>
-            Blah blah blah blah blah, reviews here!! :)
+            {props.reviews && props.reviews.map(review =>
+              <div key={review.id}> <br></br>Rating: {review.rating}<br></br> Title: {review.title}<br></br>{review.content}</div>  
+                )}
         </div>
     ) 
 }
-
+// check to see if i have props.reviews, if it is not undefined then it will iterate and the list of reviews will display
 export default Reviews

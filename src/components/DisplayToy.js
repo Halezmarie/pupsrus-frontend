@@ -4,8 +4,7 @@ import ReviewsContainer from '../containers/ReviewsContainer'
 
 const DisplayToy = (props) => {
 
-
-let toy = props.toys[props.match.params.id - 1 ]
+let toy = props.toys.filter(toy => toy.id == props.match.params.id)[0]
 
     return (
     <div>
