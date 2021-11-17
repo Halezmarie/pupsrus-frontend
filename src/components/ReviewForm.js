@@ -9,23 +9,32 @@ class ReviewForm extends React.Component {
         content: '',
       }
 
-    
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+
+        })
+    }
+
+    handleSubmit= (event) => {
+        event.preventDefault()
+
+    }
 
 render(){
-
     return (
-
         <div>
-            <form>
-            <br></br>
+            <form onSubmit={this.handleSubmit}>
+                <br></br>
             <label> Review Title: </label>
-            <input type="text"/>
+            <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
             <br></br>
             <label> Rating: </label>
-            <input type="number" maxlength="10"/>
+            <input type="number" name="rating" value={this.state.rating} onChange={this.handleChange}/>
             <br></br>
             <label> Review Content: </label>
-            <input type="text"/>
+            <input type="text" name="content" value={this.state.content} onChange={this.handleChange}/>
+            <input type="submit"/> 
             </form>
         </div>
     )
