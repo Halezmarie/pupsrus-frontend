@@ -26,9 +26,9 @@ class  ToysContainer extends React.Component {
 
         <div>
             <Switch>
-            <Route path='/toys/new' component={ToyForm}/>
-            <Route path='/toys/:id' render={(routerProps) => <DisplayToy {...routerProps} toys={this.props.toys}/>}/>
-            <Route exact path='/toys' render={(routerProps) => <DisplayToy {...routerProps} toys={this.props.toys}/>}/>
+            <Route path='/toys/new' render={(routeProps) => <ToyForm {...routeProps}/>}/>
+            <Route path='/toys/:id' render={(routeProps) => <DisplayToy {...routeProps} toys={this.props.toys} />} />
+            <Route exact path='/toys' render={(routerProps) => <ToyList {...routerProps} toys={this.props.toys}/>}/>
             </Switch>
         </div>
         )

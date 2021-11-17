@@ -4,11 +4,14 @@ import React from 'react'
 
 const DisplayToy = (props) => {
 
-console.log(props)
+
 let toy = props.toys[props.match.params.id - 1 ]
+
     return (
     <div>
         {toy ? toy.name : null} - {toy ? toy.description : null} 
+        <img src={toy? toy.image_url : null}/>
+
   </div>
   
     )
