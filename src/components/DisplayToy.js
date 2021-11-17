@@ -12,7 +12,7 @@ let toy = props.toys[props.match.params.id - 1 ]
     <h1>
         <img src={toy? toy.image_url : null}/><br></br>
         {toy ? toy.name : null} : {toy ? toy.description : null} 
-        <ReviewsContainer/>
+        <ReviewsContainer toy={toy}/>
     </h1>
     </div>
     )
