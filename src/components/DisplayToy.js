@@ -8,10 +8,11 @@ const DisplayToy = (props) => {
 let toy = props.toys[props.match.params.id - 1 ]
 
     return (
-    <div>
-        {toy ? toy.name : null} - {toy ? toy.description : null} 
-        <img src={toy? toy.image_url : null}/>
-  </div>
+    <h1>
+        <img src={toy? toy.image_url : null}/><br></br>
+        {toy ? toy.name : null} : {toy ? toy.description : null} 
+        
+    </h1>
   
     )
 }
