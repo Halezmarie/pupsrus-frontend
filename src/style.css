@@ -1,5 +1,6 @@
-img {
-    display: block;
-    width: 50;
-    height: 50;
-  }
+image: {
+  flex: 1,
+  aspectRatio: 1.5, 
+  resizeMode: 'contain',
+
+}

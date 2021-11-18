@@ -13,7 +13,7 @@ const ToyList = (props) => {
         <div>
           {props.toys.map(toy =>
             <div key={toy.id}>
-              <Link to={`/toys/${toy.id}`}>{toy.name} -  <img src={toy.image_url} alt={`${toy.name}`}/></Link>
+              <Link to={`/toys/${toy.id}`}>{toy.name} -  <img src={toy.image_url} alt="Example1" width="300" height="300" /></Link>
             </div> )}
         </div>
     
