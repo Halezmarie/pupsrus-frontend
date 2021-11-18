@@ -2,8 +2,6 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 
-// I need 5 functional components 
-
 // rendering a list of toys
 
 const ToyList = (props) => {

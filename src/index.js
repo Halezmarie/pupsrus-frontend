@@ -32,5 +32,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
 // frontend is grabbing the data with minimal manipulation of the data that is then showcased to the users.. render it all and display 😎
