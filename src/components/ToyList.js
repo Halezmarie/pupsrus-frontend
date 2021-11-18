@@ -6,14 +6,13 @@ import {Link} from 'react-router-dom'
 
 const ToyList = (props) => {
 
-    
-
+  
     // iterating over my data and making a list to display to the user
     return (
         <div>
           {props.toys.map(toy =>
             <div key={toy.id}>
-              <Link to={`/toys/${toy.id}`}>{toy.name} -  <img src={toy.image_url} alt="Example1" width="300" height="300" /></Link>
+              <Link to={`/toys/${toy.id}`}>{toy.name} -  <img src={toy.image_url} alt="toyimage" width="300" height="300" /></Link>
             </div> )}
         </div>
     

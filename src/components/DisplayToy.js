@@ -9,7 +9,7 @@ let toy = props.toys.filter(toy => toy.id == props.match.params.id)[0]
     return (
     <div>
     <h1>
-        <img src={toy? toy.image_url : null} alt="Example1" width="300" height="300"/><br></br>
+        <img src={toy? toy.image_url : null} alt="toyimage" width="300" height="300"/><br></br>
         {toy ? toy.name : null} : {toy ? toy.description : null} 
         <ReviewsContainer toy={toy}/>
     </h1>
