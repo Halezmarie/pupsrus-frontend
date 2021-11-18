@@ -12,6 +12,7 @@ class ReviewForm extends React.Component {
 
     handleChange = (event) => {
         this.setState({
+            
             [event.target.name]: event.target.value
 
         })
@@ -46,5 +47,4 @@ render(){
     )
 }
 }
-
 export default connect(null, {createReview})(ReviewForm)

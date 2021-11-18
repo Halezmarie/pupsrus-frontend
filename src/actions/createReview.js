@@ -6,8 +6,9 @@ export const createReview = (review, toyId) => {
         fetch(`http://localhost:3000/api/v1/toys/${toyId}/reviews`, {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
-            },
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+          },
             body: JSON.stringify(review)
           })
         .then(res => res.json())

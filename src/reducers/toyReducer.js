@@ -21,7 +21,18 @@ export default function toyReducer(state = {toys: []}, action) {
             }
         })
         return {...state, toys: toys}
-        default:
-        return state
+        case 'DELETE_REVIEW':
+          debugger;
+            let deletetoys = state.toys.map(toy => {
+              console.log(toy.id)
+              if (toy.id === action.payload.id) {
+                return action.payload
+              } else {
+                return toy
+              }
+            })
+            return {...state, toys: deletetoys}
+            default:
+              return state
     }
 }
