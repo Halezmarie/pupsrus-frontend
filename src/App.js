@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux'
 import ToysContainer from './containers/ToysContainer'
 
 // since I did export default I need fetchToys in curly brackets

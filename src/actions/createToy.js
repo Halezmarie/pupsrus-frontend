@@ -10,11 +10,16 @@ export const createToy = (toydata) => {
             body: JSON.stringify(toydata)
         })
         .then(res => res.json())
-        .then(newtoy => dispatch ({type: 'NEW_TOY', payload: newtoy}))
+        .then(toy => {
+            if (toy.error) {
+              alert(toy.error)
+            } else {
+              dispatch({type: 'CREATE_TOY', payload: toy})
+            }
+        })
+    }}
 
-
-    }
 // stringify so that is sent over as the server expects it: in a string
-}
+
 
 // returning dispatch so I can return the function and the function is taking dispatch as an argument. I am able to do that because of THUNK. It is allowing me to pass in dispatch to the thunk function inside of the action creator 

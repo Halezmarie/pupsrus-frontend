@@ -3,13 +3,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
-import { fetchToys } from '../actions/fetchToys'
+import {fetchToys} from '../actions/fetchToys'
 import ToyList from '../components/ToyList'
-import ToyForm from '../components/ToyForm'
 import DisplayToy from '../components/DisplayToy'
+import ToyForm from '../components/ToyForm'
+
 
 // must always have a render 
-class  ToysContainer extends React.Component {
+class ToysContainer extends React.Component {
 
     // need to add it to the connect to have access to fetchToys with props
     // fetch the toys, without this nothing can be accessed 
@@ -42,7 +43,6 @@ const mapStateToProps = state => {
     return {
         toys: state.toys
     }
-
 }
 
 export default connect(mapStateToProps, {fetchToys}) (ToysContainer)

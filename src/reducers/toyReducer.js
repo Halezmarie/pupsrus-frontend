@@ -12,7 +12,16 @@ export default function toyReducer(state = {toys: []}, action) {
     case 'NEW_TOY':
         return {...state, toys: [...state.toys, action.payload]}
         // toys will point to an array that has all the prev toys + new toy
-    default:
+        case 'CREATE_REVIEW':
+            let toys = state.toys.map(toy => {
+                if (toy.id === action.payload.id) {
+                return action.payload
+            } else {
+                return toy
+            }
+        })
+        return {...state, toys: toys}
+        default:
         return state
     }
 }

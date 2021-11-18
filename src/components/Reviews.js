@@ -1,11 +1,12 @@
 import React from 'react'
 
+
 const Reviews = (props) => {
 
     return(
         <div>
             {props.reviews && props.reviews.map(review =>
-              <div key={review.id}> <br></br> Reviews: <br></br><br></br>  Title: {review.title}<br></br> Rating: {review.rating}<br></br>{review.content}</div>  
+              <div key={review.id}> <br></br> <br></br>  Title: {review.title}<br></br> Rating: {review.rating}<br></br>{review.content}</div>  
                 )}
         </div>
     ) 

@@ -1,12 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {createReview} from '../actions/createReview'
 // controlled form so I need to store values in the state
 
 class ReviewForm extends React.Component {
     state = {
         title: '',
         rating: '',
-        content: '',
+        content: ''
       }
 
     handleChange = (event) => {
@@ -16,9 +17,14 @@ class ReviewForm extends React.Component {
         })
     }
 
-    handleSubmit= (event) => {
+    handleSubmit = (event) => {
         event.preventDefault()
-
+        this.props.createReview(this.state, this.props.toy.id)
+        this.setState({ 
+            title: '',
+            rating: '',
+            content: ''
+          })
     }
 
 render(){
@@ -34,11 +40,11 @@ render(){
             <br></br>
             <label> Review Content: </label>
             <input type="text" name="content" value={this.state.content} onChange={this.handleChange}/>
-            <input type="submit"/> 
+            <input type="submit" /> 
             </form>
         </div>
     )
 }
 }
 
-export default connect(null, )(ReviewForm)
+export default connect(null, {createReview})(ReviewForm)
