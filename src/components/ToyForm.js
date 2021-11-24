@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {createToy} from '../actions/createToy'
+import { Form, Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
     class ToyForm extends React.Component {
         state = {
@@ -37,17 +39,23 @@ import {createToy} from '../actions/createToy'
 
     render() {
         return (
-       <div>
+            <Container className='w-25'>
+            <h1 className="header text-center">Create a New Toy! 🐶
+
+            <br></br><br></br>
            <form onSubmit={this.handleSubmitButton}>
-               <label>Name: </label>
+               <label>Name </label>
                <input type='text' placeholder='Toy name...' value={this.state.name} name="name" onChange={this.handleChange} /><br/>
+               <br></br>
                <label>Description </label>
-               <input type='text' placeholder='Description of the toy...' value={this.state.description} name="description" onChange={this.handleChange} /><br/>
+               <input type='text' placeholder='Description of the toy...' value={this.state.description} name="description" onChange={this.handleChange} /><br/><br></br>
                <label>Image </label>
                <input type='text' placeholder='Picture of the toy...' value={this.state.image_url} name="image_url" onChange={this.handleChange}/><br/>
+               <br></br>
                <input type="submit"/>
            </form>
-       </div>
+           </h1>
+           </Container>
         )
     }
 }
