@@ -9,7 +9,7 @@ export default function toyReducer(state = {toys: []}, action) {
     switch (action.type) {
     case 'FETCH_TOYS':
         return {toys: action.payload} // new redux state with the data from the fetch request
-    case 'NEW_TOY':
+    case 'CREATE_TOY':
         return {...state, toys: [...state.toys, action.payload]}
         // toys will point to an array that has all the prev toys + new toy
         case 'CREATE_REVIEW':

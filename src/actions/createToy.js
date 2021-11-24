@@ -2,11 +2,11 @@ export const createToy = (toydata, history) => {
   
     return (dispatch) => {
         fetch('http://localhost:3000/api/v1/toys', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
             },
-            method: 'POST',
             body: JSON.stringify(toydata)
         })
         .then(res => res.json())
