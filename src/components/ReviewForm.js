@@ -39,6 +39,7 @@ render(){
             <br></br>
             <label> Review Content: </label>
             <input type="text" name="content" value={this.state.content} onChange={this.handleChange}/>
+            <br></br><br></br>
             <input type="submit" /> 
             </form>
         </div>
