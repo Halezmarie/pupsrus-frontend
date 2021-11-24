@@ -24,7 +24,7 @@ import {createToy} from '../actions/createToy'
     // when there is a change I am updating my state, my state will be getting sent to createToy.js as the argument. Data will be coming from  ^ the state 
     handleSubmitButton = (event) => {
         event.preventDefault()
-        this.props.createToy(this.state)
+        this.props.createToy(this.state, this.props.history)
         this.setState({
             name: '',
             description: '',

@@ -1,4 +1,4 @@
-export const createToy = (toydata) => {
+export const createToy = (toydata, history) => {
   
     return (dispatch) => {
         fetch('http://localhost:3000/api/v1/toys', {
@@ -15,6 +15,7 @@ export const createToy = (toydata) => {
               alert(toy.error)
             } else {
               dispatch({type: 'CREATE_TOY', payload: toy})
+              history.push(`/toys/${toy.id}`)
             }
         })
     }}
