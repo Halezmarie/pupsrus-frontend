@@ -19,5 +19,4 @@ export const createReview = (review, toyId) => {
           })
       }
     }
-// stringify so that is sent over as the server expects it: in a string
 

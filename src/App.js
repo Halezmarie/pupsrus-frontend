@@ -8,8 +8,6 @@ import About from './pages/about';
 import SignUp from './pages/signup';
 import SignIn from './pages/signin';
 
-// since I did export default I need fetchToys in curly brackets
-
 class App extends React.Component {
 
   render() {
@@ -26,7 +24,5 @@ class App extends React.Component {
       </Router>
     );
   }}
-
-// ask why I do not need <Route path="/toys" /> // <Route path="/toys/new"  /> in my routes.
 
 export default App;

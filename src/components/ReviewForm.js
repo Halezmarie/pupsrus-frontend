@@ -2,8 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {createReview} from '../actions/createReview'
 
-// controlled form so I need to store values in the state
-
 class ReviewForm extends React.Component {
     state = {
         title: '',

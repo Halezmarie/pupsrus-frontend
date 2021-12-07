@@ -3,11 +3,8 @@ import {Link} from 'react-router-dom'
 import {Container, Card, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css';
 
-// rendering a list of toys
-
 const ToyList = (props) => {
 
-    // iterating over my data and making a list to display to the user
     return (
         <div>
         <Container fluid>
@@ -24,7 +21,5 @@ const ToyList = (props) => {
       </Container>     
         </div>
     )}
-    
-// need props first because it is the info being passed from the toy container to my child component of toys
 
 export default ToyList;
