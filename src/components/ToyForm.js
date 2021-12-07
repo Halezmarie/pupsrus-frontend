@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {createToy} from '../actions/createToy'
 import { Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+
 
     class ToyForm extends React.Component {
         state = {
@@ -17,7 +17,6 @@ import 'bootstrap/dist/css/bootstrap.css';
         })
     }
     
-
     handleSubmitButton = (event) => {
         event.preventDefault()
         this.props.createToy(this.state, this.props.history)
@@ -32,7 +31,6 @@ import 'bootstrap/dist/css/bootstrap.css';
         return (
             <Container className='w-25'>
             <h1 className="header text-center">Create a New Toy! 🐶
-
             <br></br><br></br>
            <form onSubmit={this.handleSubmitButton}>
                <label>Name </label>

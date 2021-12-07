@@ -5,8 +5,6 @@ import {deleteReview} from '../actions/deleteReview.js';
 
 const Reviews = (props) => {
 
-
-
     const handleDelete = (review) => {
         props.deleteReview(review.id, review.toy_id)
       }

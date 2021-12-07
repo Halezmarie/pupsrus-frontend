@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {Container, Card, Row, Col} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.css';
+
 
 const ToyList = (props) => {
 

@@ -14,6 +14,7 @@ export const createReview = (review, toyId) => {
             if (toy.error) {
               alert(toy.error)
             } else {
+              console.log("C")
               dispatch({type: 'CREATE_REVIEW', payload: toy})
             }
           })
