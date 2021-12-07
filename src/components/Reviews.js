@@ -19,6 +19,6 @@ const Reviews = (props) => {
       </div>
   ) 
 }
-
 // check to see if i have props.reviews, if it is not undefined then it will iterate and the list of reviews will display
+
 export default connect(null, {deleteReview})(Reviews)

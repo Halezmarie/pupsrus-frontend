@@ -24,6 +24,7 @@ const ToyList = (props) => {
       </Container>     
         </div>
     )}
+    
 // need props first because it is the info being passed from the toy container to my child component of toys
 
 export default ToyList;

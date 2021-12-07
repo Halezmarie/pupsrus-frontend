@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const DisplayToy = (props) => {
 
+
     let toy = props.toys.filter(toy => toy.id == props.match.params.id)[0]
 
     return (
@@ -20,7 +21,6 @@ const DisplayToy = (props) => {
 
     )
 }
-
 // props.toys is holding all the toys I have in the store, but I am only wanting to display the individual toy
 export default DisplayToy
 

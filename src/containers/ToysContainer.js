@@ -20,7 +20,7 @@ class ToysContainer extends React.Component {
     }
 
 
-    //  in order for the routes to haccess to the props that they need my routes (need to be in a component) that can send the props through the route to the components 
+    //  in order for the routes to access to the props that they need my routes (need to be in a component) that can send the props through the route to the components 
     render () {
 
         return (
@@ -47,3 +47,4 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {fetchToys}) (ToysContainer)
 // calling on fetchToys which takes us to the fetch request, nothing would happen w/o it
+// connect is calling store.dispatch({type: 'FETCH_TOYS', payload: {name: 'Biscotto Toy'}}) passed in an action, then goes to fetchToys.js and is expecting a return action object. It is expecting that because once that is returned from there it is then (by the connect) is dispatched to the store which is then sent into our toyReducer.js as action. 
