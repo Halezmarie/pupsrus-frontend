@@ -19,19 +19,19 @@ const Navbar = () => {
             <Bars />
   
             <NavMenu>
-                <NavLink to="/" activestyle>
+                <NavLink to="/" >
                     Home
                 </NavLink>
-                <NavLink to="/about" activestyle>
+                <NavLink to="/about">
                     About
                 </NavLink>
-                <NavLink to="/toys" activestyle>
+                <NavLink to="/toys" >
                     All Toys
                 </NavLink>
-                <NavLink to="/toys/new" activestyle>
+                <NavLink to="/toys/new" >
                     Create a Toy
                 </NavLink>
-                <NavLink to="/signin" activestyle>
+                <NavLink to="/signin">
                     Sign In
                 </NavLink>
                 <NavBtn>
@@ -42,4 +42,7 @@ const Navbar = () => {
         </>
     );
   };
+
+
+  
   export default Navbar;

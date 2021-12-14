@@ -12,10 +12,9 @@ class ToysContainer extends React.Component {
     componentDidMount(){
         this.props.fetchToys()
     }
+
     render () {
-
         return (
-
         <div>
             <Switch>
                 <Route path='/toys/new' render={(routeProps) => <ToyForm {...routeProps}/>}/>
@@ -27,6 +26,7 @@ class ToysContainer extends React.Component {
     }   
 }
 
+// state could be carrots, it could be anything. Passing it as an argument.
 const mapStateToProps = state => {
     return {
         toys: state.toys

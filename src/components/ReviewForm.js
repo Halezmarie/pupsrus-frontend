@@ -34,10 +34,10 @@ class ReviewForm extends React.Component {
             <text> Add a review for this product: </text>
               <br></br><br></br>
             <label> Review Title: </label>
-            <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
+            <input type="text" name="title" onChange={this.handleChange}/>
             <br></br><br></br>
             <label> Rating: </label>
-            <input type="number" name="rating" value={this.state.rating} onChange={this.handleChange}/>
+            <input type="number" name="rating" min="0" max="10" value={this.state.rating} onChange={this.handleChange}/>
             <br></br><br></br>
             <label> Review Content: </label>
             <input type="text" name="content" value={this.state.content} onChange={this.handleChange}/>

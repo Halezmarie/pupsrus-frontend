@@ -15,10 +15,10 @@ let store = createStore(toyReducer, composeEnhancers(applyMiddleware(thunk)))
 
 
 ReactDOM.render(
-  <Provider store={store}>
     <Router>
+    <Provider store={store}>
     <App/>
-    </Router>
-  </Provider>,
+    </Provider>
+    </Router>,
   document.getElementById('root')
 );
