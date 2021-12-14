@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {createToy} from '../actions/createToy'
 import { Container } from 'react-bootstrap';
-
+import 'bootstrap/dist/css/bootstrap.css';
 
     class ToyForm extends React.Component {
         state = {
