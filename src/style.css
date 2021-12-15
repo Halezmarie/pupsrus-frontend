@@ -1,6 +1,19 @@
-image: {
-  flex: 1,
-  aspectRatio: 1.5, 
-  resizeMode: 'contain',
+.puppy {
+  height: 300px;
+  width: auto;
+}
 
+.anotherpuppy{
+  height: 300px;
+  width: auto;
+}
+
+.yetanotherpuppy{
+  height: 300px;
+  width: auto;
+}
+
+.lastpuppy{
+  height: 300px;
+  width: auto;
 }

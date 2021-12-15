@@ -12,6 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
+      <Router>
       <div>
         <Navbar />
         <ToysContainer />
@@ -22,6 +23,7 @@ class App extends React.Component {
           <Route path="/sign-up" component={SignUp} />
         </Switch>
       </div>
+      </Router>
     );
   }
 }
