@@ -3,6 +3,7 @@ import ReviewsContainer from '../containers/ReviewsContainer'
 import { Container } from 'react-bootstrap'
 
 
+
 const DisplayToy = (props) => {
 
     let toy = props.toys.filter(toy => toy.id == props.match.params.id)[0]
