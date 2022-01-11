@@ -1,10 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ReviewsContainer from '../containers/ReviewsContainer'
 import { Container } from 'react-bootstrap'
 
-
-
 const DisplayToy = (props) => {
+    const [like, setLike] = useState(0)
 
     let toy = props.toys.filter(toy => toy.id == props.match.params.id)[0]
     if (!toy) return null
@@ -14,6 +13,7 @@ const DisplayToy = (props) => {
             <h1>
                 <h1> {toy.name}</h1>
                 <img src={toy.image_url} alt="toyimage" width="300" height="300" /><br></br>
+                <button onClick={() => setLike(like +1)}> {like} Likes </button>
                 <p>{toy.description}</p>
                 <ReviewsContainer toy={toy} />
             </h1>

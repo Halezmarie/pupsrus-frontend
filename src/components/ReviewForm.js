@@ -23,7 +23,6 @@ class ReviewForm extends React.Component {
             rating: '',
             content: ''
         })
-        console.log("A")
     }
 
     render() {
