@@ -1,4 +1,5 @@
 The Rails API repo: [Pups R Us Backend](https://github.com/Halezmarie/pupsrus-backend)
+[Demo of Pups R Us](https://www.youtube.com/watch?v=kGQkVHi1O_UAiC8d7yGrX_3CzR/view?usp=sharing)
 
 # Welcome to Pups R Us
 Pups R Us is an app for reviewing toys for your favorite pups! Users can anonymously submit reviews for existing toys, or add new toys to the website. 
