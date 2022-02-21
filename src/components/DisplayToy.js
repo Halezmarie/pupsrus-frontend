@@ -1,6 +1,8 @@
 import React from 'react'
 import ReviewsContainer from '../containers/ReviewsContainer'
 import { Container } from 'react-bootstrap'
+import {connect} from 'react-redux'
+import {deleteToy} from '../actions/deleteToy.js';
 
 const DisplayToy = (props) => {
 
@@ -18,4 +20,5 @@ const DisplayToy = (props) => {
         </Container>
     )
 }
-export default DisplayToy
+export default connect(null, {deleteToy})(displayToy);
+
