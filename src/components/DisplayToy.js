@@ -8,7 +8,7 @@ const DisplayToy = (props) => {
 
     let toy = props.toys.filter(toy => toy.id == props.match.params.id)[0]
     if (!toy) return null
-    // let toyInfo = (toy &&toy[0]);
+    let toyInfo = (toy &&toy[0]);
 
     const handleDelete = (toyInfo) => {
         props.deleteToy(toyInfo.id, props.history)

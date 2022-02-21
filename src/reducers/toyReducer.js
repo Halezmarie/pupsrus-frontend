@@ -24,6 +24,9 @@ export default function toyReducer(state = { toys: [] }, action) {
         }
       })
       return { ...state, toys: deletetoys }
+      case 'DELETE_TOY':
+        let postDeleteToys = state.toys.filter(toy => toy.id !== action.payload.toString())
+        return { ...state, toys: postDeleteToys } 
     default:
       return state
   }
