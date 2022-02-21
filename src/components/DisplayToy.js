@@ -8,6 +8,12 @@ const DisplayToy = (props) => {
 
     let toy = props.toys.filter(toy => toy.id == props.match.params.id)[0]
     if (!toy) return null
+    let toyInfo = (toy &&toy[0].attributes);
+
+    const handleDelete = (toyInfo) => {
+        props.deleteToy(toyInfo.id, props.history)
+      }
+
 
     return (
         <Container>
@@ -20,5 +26,5 @@ const DisplayToy = (props) => {
         </Container>
     )
 }
-export default connect(null, {deleteToy})(displayToy);
+export default connect(null, {deleteToy})(DisplayToy);
 
