@@ -8,5 +8,6 @@ export const deleteToy = (toyId, history) => {
           dispatch({type: 'DELETE_TOY', payload: toyId })
           history.push('/toys')
         })
+        .catch(err => alert(err));
     }
   }

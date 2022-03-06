@@ -2,8 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { deleteReview } from '../actions/deleteReview.js';
 
-
-
 const Reviews = (props) => {
 
   const handleDelete = (review) => {
