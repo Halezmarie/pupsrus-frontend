@@ -29,7 +29,7 @@ class ToyForm extends React.Component {
     render() {
         return (
             <Container className='w-25'>
-                <h1 className="header text-center">Create a New Toy! 🐶
+                <h1 className="header text-center">Create a New Toy! 🐶🥎
                     <br></br><br></br>
                     <form onSubmit={this.handleSubmitButton}>
                         <label>Name </label>
