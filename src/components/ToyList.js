@@ -41,8 +41,6 @@ const ToyList = (props) => {
   
   let toyArray = props.toys ? sortToys(props.toys) : null
   let filteredToys = filterReview(toyArray)
-  // console.log(filteredToys)
-  // check to ensure it is going through
 
   return (
     <div>
