@@ -1,0 +1,2 @@
+const Search = (props) => {
+}
