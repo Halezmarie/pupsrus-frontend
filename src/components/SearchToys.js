@@ -9,6 +9,7 @@ return (
       <input type='text' id='toysearch' placeholder='Name' />
       <button type="submit">Search</button>
     </form>
+    </div>
   )
 
 
