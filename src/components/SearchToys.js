@@ -3,7 +3,12 @@ const Search = (props) => {
 
 
 return (
- //form here 
+    <div>
+    <form action='/' method='get'>
+      <label htmlFor='toy-search'>Search for a toy...: </label>
+      <input type='text' id='toysearch' placeholder='Name' />
+      <button type="submit">Search</button>
+    </form>
   )
 
 
