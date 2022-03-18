@@ -1,7 +1,13 @@
 const Search = (props) => {
+
+// search and query 
+  const toys = props.toys
 }
 
 
+
+// filter toys, pass in props of toys and query. 
+// return the toys as a filter with the name to lowercase
 return (
     <div>
     <form action='/' method='get'>
