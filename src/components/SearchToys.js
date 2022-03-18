@@ -7,6 +7,12 @@ const Search = (props) => {
 
 
 // filter toys, pass in props of toys and query. 
+
+const filterToys = (toys, query) =>{
+
+  return toys.filter
+
+}
 // return the toys as a filter with the name to lowercase
 return (
     <div>
