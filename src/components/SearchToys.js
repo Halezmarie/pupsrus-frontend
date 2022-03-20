@@ -13,6 +13,7 @@ const filterToys = (toys, query) =>{
   return toys.filter
 
 }
+const filteredToys = filtertoys(toys, query)
 // return the toys as a filter with the name to lowercase
 return (
     <div>
@@ -23,7 +24,6 @@ return (
     </form>
     </div>
   )
-
 
 
 
