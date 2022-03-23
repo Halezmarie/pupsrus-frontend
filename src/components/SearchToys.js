@@ -9,11 +9,11 @@ const Search = (props) => {
 // filter toys, pass in props of toys and query. 
 
 const filterToys = ((toys, query) => {
-  constToyName = toy.atrributes.name.toLowerCase()
+  constToyName = toy.attributes.name.toLowerCase()
   return toyName.includes(query)
 })
 
-const filteredToys = filtertoys(toys, query)
+const filteredToys = filterToys(toys, query)
 // return the toys as a filter with the name to lowercase
 return (
     <div>
