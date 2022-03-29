@@ -11,15 +11,15 @@ import ToyForm from '../components/ToyForm'
 const ToysContainer = () => {
   const dispatch = useDispatch();
   dispatch(fetchToys());
-  
+
   const toys = useSelector((state) => state.toys);
   
   return(
     <div>
       <Switch>
-          <Route path='/toys/new' render={(routeProps) => <ToyForm {...routeProps} toys={toys} />} />
-          <Route path='/toys/:id' render={(routeProps) => <DisplayToy {...routeProps} toys={toys} />} />
-          <Route path='/toys' render={(routerProps) => <ToyList {...routerProps} toys={toys} />} />
+          <Route path='/toys/new' render={(routeProps) => <ToyForm {...routeProps} toys={toys} />}/>
+          <Route path='/toys/:id' render={(routeProps) => <DisplayToy {...routeProps} toys={toys}/>}/>
+          <Route path='/toys' render={(routerProps) => <ToyList {...routerProps} toys={toys} />}/>
       </Switch>
     </div>
   );
