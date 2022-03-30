@@ -19,12 +19,10 @@
 //     <div>
 //     <form action='/' method='get'>
 //       <label htmlFor='toy-search'>Search for a toy...: </label>
-//       <input type='text' id='toysearch' placeholder='Name' />
+//       <input type='text' id='toy-search' placeholder='Name' />
 //       <button type="submit">Search</button>
 //     </form>
 //     </div>
 //   )
-
-
 
 // export default Search;

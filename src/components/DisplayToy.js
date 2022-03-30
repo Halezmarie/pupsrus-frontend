@@ -18,7 +18,7 @@ const DisplayToy = (props) => {
         <Container>
             <h1>
                 <h1> {toy.name}</h1>
-                <img src={toy.image_url} alt="toyimage" width="300" height="300" /><br></br>
+                <img src={toy.image_url} alt="toy-image" width="300" height="300" /><br></br>
                 <p>{toy.description}</p>
                 <Button onClick={() => handleDelete(toyInfo)}>Delete Toy</Button>
                 <ReviewsContainer toy={toy} />

@@ -58,7 +58,7 @@ const ToyList = (props) => {
             <Col key={toy.id}>
               <Card style={{ width: '17rem' }} className='text-center'>
                 <Link to={`/toys/${toy.id}`}>{toy.name}
-                  <Card.Img variant='top' src={toy.image_url} alt="toyimage" width="300" height="300" /></Link>
+                  <Card.Img variant='top' src={toy.image_url} alt="toy-image" width="300" height="300" /></Link>
               </Card>
             </Col>
           )}
