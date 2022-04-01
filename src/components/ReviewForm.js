@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { createReview } from '../actions/createReview'
 
 
-function ReviewForm (props) {
+
+function ReviewForm ({props}) {
     const [form, setValues] = useState({
         title: '',
         rating: '',
@@ -12,21 +13,32 @@ function ReviewForm (props) {
 
    const handleChange = (event) => {
         setValues({
+            ...form,
             [event.target.name]: event.target.value
         })
     }
 
+
+
+
    const handleSubmit = (event) => {
         event.preventDefault()
-        props.createReview(props.toy.id)
+        console.log("lets seeeee", props)
+        console.log("lets seeeee 2", form)
+
+      const result = createReview(form, props.id)
+      console.log(result)
+       console.log("lets seeeee 3", props)
         setValues({
             ...form,
             title: '',
             rating: '',
             content: ''
         })
-   }
 
+
+     
+   }
         return (
             <div>
                 <form onSubmit={handleSubmit}>
@@ -34,13 +46,13 @@ function ReviewForm (props) {
                     <text> Add a review for this product: </text>
                     <br></br><br></br>
                     <label> Review Title: </label>
-                    <input type="text" name="title" value={setValues.title} onChange={handleChange} />
+                    <input type="text" name="title" value={form.title} onChange={handleChange} />
                     <br></br><br></br>
                     <label> Rating: </label>
-                    <input type="number" name="rating" min="0" max="10" value={setValues.rating} onChange={handleChange} />
+                    <input type="number" name="rating" min="0" max="10" value={form.rating} onChange={handleChange} />
                     <br></br><br></br>
                     <label> Review Content: </label>
-                    <input type="text" name="content" value={setValues.content} onChange={handleChange}  />
+                    <input type="text" name="content" value={form.content} onChange={handleChange}  />
                     <br></br><br></br>
                     <input type="submit" />
                 </form>
