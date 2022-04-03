@@ -18,9 +18,6 @@ function ReviewForm ({props}) {
         })
     }
 
-
-
-
    const handleSubmit = (event) => {
         event.preventDefault()
         console.log("lets seeeee 1", form)
@@ -34,7 +31,6 @@ function ReviewForm ({props}) {
             rating: '',
             content: ''
         })
-
 
      
    }
