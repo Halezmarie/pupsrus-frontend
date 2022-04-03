@@ -2,7 +2,6 @@ export const createReview = (review, toyId) => {
 
   // return 
   (async (dispatch) => {
-    console.log("testing, testing")
     const result = await fetch(`http://localhost:3000/api/v1/toys/${toyId}/reviews`, {
       method: 'POST',
       headers: {
@@ -18,7 +17,6 @@ export const createReview = (review, toyId) => {
         } else {
           console.log("inside the else", toy)
        dispatch({ type: 'CREATE_REVIEW', payload: toy })
-
         
         }
       })
