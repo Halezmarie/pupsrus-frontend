@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {connect} from 'react-redux'
+
 
 // using a hook for the search bar
 
@@ -19,9 +19,7 @@ const searchToys = (searchValue) => {
             />
 
 
-
-            export default connect(null, {deleteToy})(DisplayToy);
-
+export default Search;
 
 // const Search = (props) => {
 
