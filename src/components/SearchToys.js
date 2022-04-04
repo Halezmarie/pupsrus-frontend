@@ -1,3 +1,28 @@
+
+import React from 'react'
+import {connect} from 'react-redux'
+
+// using a hook for the search bar
+
+
+
+const [searchInput, setSearchInput] = useState('')
+
+const searchToys = (searchValue) => {
+    setSearchInput(searchValue)
+}
+
+
+<Input icon='search'
+                placeholder='Search...'
+                onChange={(e) => searchToys(e.target.value)}
+            />
+
+
+
+            export default connect(null, {deleteToy})(DisplayToy);
+
+
 // const Search = (props) => {
 
 // // search and query 
