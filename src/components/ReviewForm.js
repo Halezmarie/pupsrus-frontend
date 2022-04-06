@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { createReview } from '../actions/createReview'
 
-
-
 function ReviewForm ({props}) {
     const [form, setValues] = useState({
         title: '',
@@ -20,11 +18,7 @@ function ReviewForm ({props}) {
 
    const handleSubmit = (event) => {
         event.preventDefault()
-        console.log("lets seeeee 1", form)
-
       const result = createReview(form, props.id)
-      console.log(result)
-       console.log("lets seeeee 2", props)
         setValues({
             ...form,
             title: '',
