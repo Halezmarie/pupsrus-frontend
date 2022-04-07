@@ -1,7 +1,7 @@
 export const toys = [{
   id: 1,
   name: 'Sample Toy #1',
-  image_url: 'https://m.media-amazon.com/images/I/61DWaMHr8HL._AC_SX425_.jpg")\n',
+  image_url: 'https://m.media-amazon.com/images/I/61DWaMHr8HL._AC_SX425_.jpg")',
   description: 'Sample Toy #1 description',
   reviews: [{
     id: 1001,
