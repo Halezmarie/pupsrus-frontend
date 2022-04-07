@@ -1,16 +1,18 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { createReview } from "../actions/createReview";
+import React, { useState } from 'react';
+import { Form, Button, Container } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { createReview } from '../actions/createReview';
 
-function ReviewForm({ props }) {
-  const [form, setValues] = useState({
-    title: "",
-    rating: "",
-    content: "",
+const ReviewForm = ({ toy }) => {
+  const dispatch = useDispatch();
+  const [form, setForm] = useState({
+    title: '',
+    rating: '',
+    content: '',
   });
 
   const handleChange = (event) => {
-    setValues({
+    setForm({
       ...form,
       [event.target.name]: event.target.value,
     });
@@ -18,32 +20,28 @@ function ReviewForm({ props }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const result = createReview(form, props.id);
-    setValues({
+    dispatch(createReview(form, toy.id));
+    setForm({
       ...form,
-      title: "",
-      rating: "",
-      content: "",
+      title: '',
+      rating: '',
+      content: '',
     });
   };
+
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <br></br>
-        <text> Add a review for this product: </text>
-        <br></br>
-        <br></br>
-        <label> Review Title: </label>
-        <input
+    <Container>
+      <h1 className="header text-center">Create a Review</h1>
+      <Form onSubmit={handleSubmit}>
+        <Form.Label>Title:</Form.Label>
+        <Form.Control
           type="text"
           name="title"
           value={form.title}
           onChange={handleChange}
         />
-        <br></br>
-        <br></br>
-        <label> Rating: </label>
-        <input
+        <Form.Label>Rating:</Form.Label>
+        <Form.Control
           type="number"
           name="rating"
           min="0"
@@ -51,21 +49,20 @@ function ReviewForm({ props }) {
           value={form.rating}
           onChange={handleChange}
         />
-        <br></br>
-        <br></br>
-        <label> Review Content: </label>
-        <input
-          type="text"
+        <Form.Label>Content:</Form.Label>
+        <Form.Control
+          as="textarea"
           name="content"
           value={form.content}
           onChange={handleChange}
+          style={{ height: '100px' }}
         />
-        <br></br>
-        <br></br>
-        <input type="submit" />
-      </form>
-    </div>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </Container>
   );
-}
+};
 
-export default connect(null, { createReview })(ReviewForm);
+export default ReviewForm;
