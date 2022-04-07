@@ -1,4 +1,4 @@
-export const deleteToy = (toyId, history) => {
+export const deleteToy = (toyId) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/toys/${toyId}`, {
       method: "DELETE",
@@ -6,7 +6,6 @@ export const deleteToy = (toyId, history) => {
       .then((response) => response.json())
       .then((toyId) => {
         dispatch({ type: "DELETE_TOY", payload: toyId });
-        history.push("/toys");
       })
       .catch((err) => alert(err));
   };
