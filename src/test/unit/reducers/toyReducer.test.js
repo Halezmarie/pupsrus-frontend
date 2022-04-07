@@ -47,7 +47,7 @@ describe('toyReducer', () => {
   it('should handle DELETE_TOY', () => {
     state = { toys: [toyWithReview] };
 
-    const payload = 1;
+    const payload = '1';
     const action = { type: 'DELETE_TOY', payload };
     const expected = initialState;
 
