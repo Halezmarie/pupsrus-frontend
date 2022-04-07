@@ -15,7 +15,7 @@ describe('toyHelpers', () => {
       const direction = 'backward';
       
       it('sorts properly', () => {
-        expect(sortToys(toys,direction)[0]).toEqual(toyWithoutReview);
+        expect(sortToys(toys, direction)[0]).toEqual(toyWithoutReview);
       });
     });
   });
