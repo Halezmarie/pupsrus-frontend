@@ -29,11 +29,11 @@ describe('toyReducer', () => {
   });
 
   it('should handle CREATE_REVIEW', () => {
-    state = { toys: [toyWithReview] };
+    state = { toys: [{ ...toyWithReview, reviews: [] }] };
     
     const payload = toyWithReview;
     const action = { type: 'CREATE_REVIEW', payload};
-    const expected = state;
+    const expected = { toys: [toyWithReview] };
     
     expect(toyReducer(state, action)).toEqual(expected);
   });
