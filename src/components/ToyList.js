@@ -1,34 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Card, Row, Col, Button } from "react-bootstrap";
+import { sortToys, filterReview } from "../helpers/toyHelpers";
 
-const ToyList = (props) => {
-  const [sortedToys, setSortedToys] = useState("forward");
+const ToyList = ({ toys }) => {
+  const [sortDirection, setSortDirection] = useState("forward");
   const [reviewFilter, setFilter] = useState("off");
 
-  const sortToys = (toys) => {
-    if (sortedToys === "forward") {
-      return toys.sort((toyA, toyB) => toyA.name.localeCompare(toyB.name));
-    }
-    if (sortedToys === "backward") {
-      return toys.sort((toyA, toyB) => toyB.name.localeCompare(toyA.name));
-    }
-  };
-
-  const filterReview = (toys) => {
-    if (reviewFilter === "on") {
-      return toys.filter((toy) => toy.reviews.length > 0);
-    } else if (reviewFilter === "off") {
-      return toys;
-    }
-  };
-
   function HandleSortOptionChange() {
-    setSortedToys("forward");
+    setSortDirection("forward");
   }
 
   function HandleSortOptionChangeBackward() {
-    setSortedToys("backward");
+    setSortDirection("backward");
   }
 
   function HandleFilterWithReviews() {
@@ -39,8 +23,8 @@ const ToyList = (props) => {
     setFilter("off");
   }
 
-  let toyArray = props.toys ? sortToys(props.toys) : null;
-  let filteredToys = filterReview(toyArray);
+  let toyArray = toys ? sortToys(toys, sortDirection) : null;
+  let filteredToys = filterReview(toyArray, reviewFilter);
 
   return (
     <div>
