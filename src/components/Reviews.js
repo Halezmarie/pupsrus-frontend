@@ -1,27 +1,28 @@
-import React from "react";
-import { connect } from "react-redux";
-import { deleteReview } from "../actions/deleteReview.js";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteReview } from '../actions/deleteReview.js';
+import { Container, Button, Card } from 'react-bootstrap';
 
-const Reviews = (props) => {
+const Reviews = ({ reviews }) => {
+  const dispatch = useDispatch();
   const handleDelete = (review) => {
-    props.deleteReview(review.id, review.toy_id);
+    dispatch(deleteReview(review.id, review.toy_id));
   };
 
   return (
-    <div>
-      {props.reviews &&
-        props.reviews.map((review) => (
-          <div key={review.id}>
-            {" "}
-            <br></br> <br></br> Title: {review.title}
-            <br></br> Rating: {review.rating}
-            <br></br>
-            {review.content}{" "}
-            <button onClick={() => handleDelete(review)}>Delete Review</button>
-          </div>
+    <Container>
+      <h1 className="header text-center">Reviews</h1>
+      {reviews &&
+        reviews.map((review) => (
+          <Card key={review.id}>
+            <Card.Title>{review.title}</Card.Title>
+            <Card.Text>{review.rating}</Card.Text>
+            <Card.Text>{review.content}</Card.Text>
+            <Button variant="primary" onClick={() => handleDelete(review)}>Delete Review</Button>
+          </Card>
         ))}
-    </div>
+    </Container>
   );
 };
 
-export default connect(null, { deleteReview })(Reviews);
+export default Reviews;
