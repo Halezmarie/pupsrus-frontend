@@ -1,4 +1,8 @@
-export default function toyReducer(state = { toys: [] }, action) {
+export const initialState = {
+  toys: []
+};
+
+export default function toyReducer(state = initialState, action) {
   switch (action.type) {
     case "FETCH_TOYS":
       return { toys: action.payload };
@@ -6,14 +10,12 @@ export default function toyReducer(state = { toys: [] }, action) {
       return { ...state, toys: [...state.toys, action.payload] };
     case "CREATE_REVIEW":
       let toys = state.toys;
-      //   if (toy.id === action.payload.id) {
       return {
         ...state,
         toys: state.toys.map((toy) =>
           toy.id == action.payload.id ? action.payload : toys
         ),
       };
-    // return { ...state, toys: toys }
     case "DELETE_REVIEW":
       let deletetoys = state.toys.map((toy) => {
         if (toy.id === action.payload.id) {
