@@ -2,7 +2,11 @@ import toyReducer, { initialState } from '../../../reducers/toyReducer';
 import { toyWithReview } from '../../fixtures/toys';
 
 describe('toyReducer', () => {
-  let state = initialState;
+  let state;
+  
+  beforeEach(() => { 
+    state = initialState;
+  });
   
   it('should handle initial state', () => {
     expect(toyReducer(undefined, {})).toEqual(initialState);
