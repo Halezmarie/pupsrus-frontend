@@ -72,8 +72,4 @@ const ToyList = ({ toys }) => {
   );
 };
 
-
-
-
-
 export default ToyList;
