@@ -5,11 +5,9 @@ import { createReview } from '../actions/createReview';
 
 const ReviewForm = ({ toy }) => {
   const dispatch = useDispatch();
-  const [form, setForm] = useState({
-    title: '',
-    rating: '',
-    content: '',
-  });
+  const initFormState = { title: '', rating: '', content: ''};
+
+  const [form, setForm] = useState(initFormState);
 
   const handleChange = (event) => {
     setForm({
@@ -21,12 +19,7 @@ const ReviewForm = ({ toy }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(createReview(form, toy.id));
-    setForm({
-      ...form,
-      title: '',
-      rating: '',
-      content: '',
-    });
+    setForm(initFormState);
   };
 
   return (
