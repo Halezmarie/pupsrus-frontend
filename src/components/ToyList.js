@@ -1,34 +1,43 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Container, Card, Row, Col, Button } from "react-bootstrap";
-import { sortToys, filterReview } from "../helpers/toyHelpers";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Card, Row, Col, Button } from 'react-bootstrap';
+import { sortToys, filterReview, searchToys } from '../helpers/toyHelpers';
+import Search from './SearchToys';
 
 const ToyList = ({ toys }) => {
-  const [sortDirection, setSortDirection] = useState("forward");
-  const [reviewFilter, setFilter] = useState("off");
+  const [sortDirection, setSortDirection] = useState('forward');
+  const [reviewFilter, setFilter] = useState('off');
+  const [searchInput, setSearchInput] = useState('');
 
   function HandleSortOptionChange() {
-    setSortDirection("forward");
+    setSortDirection('forward');
   }
 
   function HandleSortOptionChangeBackward() {
-    setSortDirection("backward");
+    setSortDirection('backward');
   }
 
   function HandleFilterWithReviews() {
-    setFilter("on");
+    setFilter('on');
+  }
+
+  function getSearchInput(input) {
+    setSearchInput(input);
   }
 
   function ResetFilter() {
-    setFilter("off");
+    setFilter('off');
   }
 
   let toyArray = toys ? sortToys(toys, sortDirection) : null;
   let filteredToys = filterReview(toyArray, reviewFilter);
+  let searchedToys = searchToys(toys, searchInput);
+  filteredToys = searchedToys;
 
   return (
     <div>
       <div className="alphabeticalDiv">
+        <Search getSearchInput={getSearchInput} />
         <Button className="m-2" value="toy" onClick={HandleSortOptionChange}>
           Toys A-Z
         </Button>
@@ -42,17 +51,17 @@ const ToyList = ({ toys }) => {
       </div>
       <div className="filterByReviews">
         <Button className="m-2" value="toy" onClick={HandleFilterWithReviews}>
-          Toys with Reviews{" "}
+          Toys with Reviews{' '}
         </Button>
         <Button className="m-2" value="toy" onClick={ResetFilter}>
-          Reset{" "}
+          Reset{' '}
         </Button>
       </div>
       <Container fluid>
         <Row>
           {filteredToys.map((toy) => (
             <Col key={toy.id}>
-              <Card style={{ width: "17rem" }} className="text-center">
+              <Card style={{ width: '17rem' }} className="text-center">
                 <Link to={`/toys/${toy.id}`}>
                   {toy.name}
                   <Card.Img

@@ -7,3 +7,7 @@ export const filterReview = (toys, filter = 'off') => {
   if (filter === "on") return toys.filter((toy) => toy.reviews.length > 0);
   return toys;
 };
+
+export const searchToys= (toys, searchInput)=> {
+    return toys.filter((toy)=> toy.name.toLowerCase().includes(searchInput.toLowerCase()));
+}
