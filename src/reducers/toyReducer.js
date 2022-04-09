@@ -27,9 +27,9 @@ export default function toyReducer(state = initialState, action) {
       return { ...state, toys: deletetoys };
     case "DELETE_TOY":
       let DeleteToys = state.toys.filter(
-        (toy) => toy.id !== action.payload.toString()
+        (toy) => toy.id != action.payload.toString()
       );
-      return { ...state, toys: DeleteToys };
+      return { toys: DeleteToys };
     default:
       return state;
   }
