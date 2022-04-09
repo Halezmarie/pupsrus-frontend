@@ -8,7 +8,7 @@ const ToyForm = ({ toy }) => {
   const [form, setForm] = useState({
     name: '',
     description: '',
-    image_url: '',
+    imageUrl: '',
   });
 
   const handleChange = (event) => {
@@ -22,12 +22,14 @@ const ToyForm = ({ toy }) => {
     event.preventDefault();
     dispatch(createToy(form, toy));
     setForm({
-      ...form,
+      form,
       name: '',
       description: '',
-      image_url: '',
+      imageUrl: '',
     });
   };
+
+  const { name, description, imageUrl } = form;
 
   return (
     <Container className="w-25">
@@ -37,7 +39,7 @@ const ToyForm = ({ toy }) => {
         <Form.Control
           type="text"
           placeholder="Toy name..."
-          value={form.name}
+          value={name}
           name="name"
           onChange={handleChange}
         />
@@ -45,7 +47,7 @@ const ToyForm = ({ toy }) => {
         <Form.Control
           type="text"
           placeholder="Description of the toy..."
-          value={form.description}
+          value={description}
           name="description"
           onChange={handleChange}
         />
@@ -53,7 +55,7 @@ const ToyForm = ({ toy }) => {
         <Form.Control
           type="text"
           placeholder="Picture of the toy..."
-          value={form.image_url}
+          value={imageUrl}
           name="image_url"
           onChange={handleChange}
         />
