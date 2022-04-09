@@ -5,9 +5,6 @@ import { Container, Button, Card } from 'react-bootstrap';
 
 const Reviews = ({ reviews }) => {
   const dispatch = useDispatch();
-  const handleDelete = (review) => {
-    dispatch(deleteReview(review.id, review.toy_id));
-  };
 
   return (
     <Container>
@@ -18,7 +15,7 @@ const Reviews = ({ reviews }) => {
             <Card.Title>{review.title}</Card.Title>
             <Card.Text>{review.rating}</Card.Text>
             <Card.Text>{review.content}</Card.Text>
-            <Button variant="primary" onClick={() => handleDelete(review)}>Delete Review</Button>
+            <Button variant="primary" onClick={() => dispatch(deleteReview(review.id, review.toy_id))}>Delete Review</Button>
           </Card>
         ))}
     </Container>
