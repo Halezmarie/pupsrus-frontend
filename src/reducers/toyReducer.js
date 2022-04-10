@@ -3,7 +3,7 @@ export const initialState = {
 };
 
 export default function toyReducer(state = initialState, action) {
-  let toys;
+  let toys = [];
   switch (action.type) {
     case 'FETCH_TOYS':
       return { toys: action.payload };
