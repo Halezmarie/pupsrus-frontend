@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Route, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchToys } from "../actions/fetchToys";
@@ -9,7 +9,10 @@ import { selectToys } from '../selectors/toySelectors';
 
 const ToysContainer = () => {
   const dispatch = useDispatch();
-  dispatch(fetchToys());
+
+  useEffect(() => {
+    dispatch(fetchToys());
+  }, [])
 
   const toys = useSelector(selectToys);
 
