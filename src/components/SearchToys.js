@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Search = (props) => {
-  const [searchInput, setSearchInput] = useState('');
+const Search = ({ searchInput, setSearchInput }) => {
 
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
-    props.getSearchInput(e.target.value);
+  };
+
+  const handleClear = () => {
+    setSearchInput('');    
   };
 
   return (
-    <div>
+    <div className='search'>
       <input
         icon="search"
         placeholder="Search..."
@@ -17,6 +19,7 @@ const Search = (props) => {
         value={searchInput}
         onChange={handleSearchChange}
       />
+      <button type="reset" onClick={handleClear}>&times;</button>
     </div>
   );
 };
