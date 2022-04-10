@@ -13,17 +13,15 @@ const DisplayToy = (props) => {
 
   const history = useHistory();
 
-  const handleDelete = (toyId) => {
-    dispatch(deleteToy(toyId, history));
-  };
-
   return (
     <Container>
       <div>
         <h1 className="header text-center">{toy.name}</h1>
-        <img src={toy.imageUrl} alt="toy-image" width="300" height="300" />
+        <img src={toy.image_url} alt="toy-image" width="300" height="300" />
         <p>{toy.description}</p>
-        <Button onClick={() => handleDelete(toy.id)}>Delete Toy</Button>
+        <Button onClick={() => dispatch(deleteToy(toy.id, history))}>
+          Delete Toy
+        </Button>
         <ReviewsContainer toy={toy} />
       </div>
       )
