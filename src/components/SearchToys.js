@@ -1,17 +1,16 @@
 import React from 'react';
 
 const Search = ({ searchInput, setSearchInput }) => {
-
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
   };
 
   const handleClear = () => {
-    setSearchInput('');    
+    setSearchInput('');
   };
 
   return (
-    <div className='search'>
+    <div className="search">
       <input
         icon="search"
         placeholder="Search..."
@@ -19,7 +18,9 @@ const Search = ({ searchInput, setSearchInput }) => {
         value={searchInput}
         onChange={handleSearchChange}
       />
-      <button type="reset" onClick={handleClear}>&times;</button>
+      <button type="reset" onClick={handleClear}>
+        &times;
+      </button>
     </div>
   );
 };
