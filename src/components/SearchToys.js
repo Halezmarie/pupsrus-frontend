@@ -1,37 +1,27 @@
-// TODO 
+import React from 'react';
 
-
-import React, { useState, useEffect } from 'react'
-
-
-// using a hook for the search bar
-
-
-const Search = (props) => {
-
-// search and query 
-  const toys = props.toys
-}
-
-const [searchInput, setSearchInput] = useState('')
-
-// const searchToys = (searchValue) => {
-//     setSearchInput(searchValue)
-// }
-
-const handleSearchChange = (e) => {
+const Search = ({ searchInput, setSearchInput }) => {
+  const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
-};
+  };
 
+  const handleClear = () => {
+    setSearchInput('');
+  };
 
-
-return () {
-    <div>
-        <Input icon='search'
-            placeholder='Search...'
-        />
-             <input type="text" value={search} onChange={handleSearchChange} />
+  return (
+    <div className="search">
+      <input
+        icon="search"
+        placeholder="Search..."
+        type="text"
+        value={searchInput}
+        onChange={handleSearchChange}
+      />
+      <button type="reset" onClick={handleClear}>
+        &times;
+      </button>
     </div>
-)}
-
+  );
+};
 export default Search;
