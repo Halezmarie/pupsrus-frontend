@@ -77,4 +77,5 @@ const ToyList = () => {
     </div>
   );
 };
+
 export default ToyList;
