@@ -13,16 +13,16 @@ const ToyForm = ({ toy }) => {
 
   const handleChange = (event) => {
     setForm({
-      form,
+      ...form,
       [event.target.name]: event.target.value,
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createToy(form, toy));
+    const { imageUrl, ...rest } = form;
+    dispatch(createToy({ image_url: imageUrl, ...rest }, toy));
     setForm({
-      form,
       name: '',
       description: '',
       imageUrl: '',
@@ -56,7 +56,7 @@ const ToyForm = ({ toy }) => {
           type="text"
           placeholder="Picture of the toy..."
           value={imageUrl}
-          name="image_url"
+          name="imageUrl"
           onChange={handleChange}
         />
         <Button variant="primary" type="submit">
