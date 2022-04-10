@@ -21,7 +21,7 @@ const ToysContainer = () => {
       <Switch>
         <Route
           path="/toys/new"
-          render={(routeProps) => <ToyForm {...routeProps} toys={toys} />}
+          render={() => <ToyForm />}
         />
         <Route
           path="/toys/:id"

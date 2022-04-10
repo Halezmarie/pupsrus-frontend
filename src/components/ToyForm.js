@@ -3,13 +3,15 @@ import { Form, Button, Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { createToy } from '../actions/createToy';
 
-const ToyForm = ({ toy }) => {
+const ToyForm = () => {
   const dispatch = useDispatch();
-  const [form, setForm] = useState({
+  const initialFormState = {
     name: '',
     description: '',
     image_url: '',
-  });
+  };
+
+  const [form, setForm] = useState(initialFormState);
 
   const handleChange = (event) => {
     setForm({
@@ -20,12 +22,8 @@ const ToyForm = ({ toy }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createToy(form, toy));
-    setForm({
-      name: '',
-      description: '',
-      image_url: '',
-    });
+    dispatch(createToy(form));
+    setForm(initialFormState);
   };
 
   const { name, description, image_url } = form;
