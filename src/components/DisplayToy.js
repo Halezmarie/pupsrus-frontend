@@ -4,14 +4,16 @@ import { Container, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteToy } from '../actions/deleteToy.js';
 import { selectToy } from '../selectors/toySelectors';
-import { useHistory } from 'react-router';
+import { useParams } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
-const DisplayToy = (props) => {
+const DisplayToy = () => {
   const dispatch = useDispatch();
+  const { id } = useParams();
 
-  const toy = useSelector(selectToy(props.match.params.id));
+  const toy = useSelector(selectToy(id));
 
-  const history = useHistory();
+  if (!toy) return <Redirect to="/toys" />;
 
   return (
     <Container>
@@ -19,12 +21,9 @@ const DisplayToy = (props) => {
         <h1 className="header text-center">{toy.name}</h1>
         <img src={toy.image_url} alt="toy-image" width="300" height="300" />
         <p>{toy.description}</p>
-        <Button onClick={() => dispatch(deleteToy(toy.id, history))}>
-          Delete Toy
-        </Button>
+        <Button onClick={() => dispatch(deleteToy(toy.id))}>Delete Toy</Button>
         <ReviewsContainer toy={toy} />
       </div>
-      )
     </Container>
   );
 };

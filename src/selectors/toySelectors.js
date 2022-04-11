@@ -1,8 +1,5 @@
 export const selectToys = ({ toys }) => toys;
-export const selectToy =
-  (toyId) =>
-  ({ toys }) =>
-    toys.find((toy) => toy.id === toyId);
+export const selectToy = (toyId) => ({ toys }) => toys.find((toy) => toy.id === Number(toyId));
 
 export const searchToysSelector =
   (sortDirection, reviewFilter, searchTerm) =>
@@ -21,3 +18,4 @@ export const searchToysSelector =
 
     return sortDirection === 'backward' ? results.reverse() : results;
   };
+
