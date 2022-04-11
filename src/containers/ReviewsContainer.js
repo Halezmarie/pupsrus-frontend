@@ -1,6 +1,6 @@
 import React from 'react';
-import ReviewForm from '../components/ReviewForm';
-import Reviews from '../components/Reviews';
+import ReviewForm from '../components/Toys/ReviewForm';
+import Reviews from '../components/Toys/Reviews';
 
 const ReviewsContainer = ({ toy }) => (
   <div>
