@@ -6,7 +6,7 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
-} from "./NavbarElements";
+} from './NavbarElements';
 
 const Navbar = () => {
   return (
@@ -20,7 +20,7 @@ const Navbar = () => {
           <NavLink to="/about">About</NavLink>
           <NavLink to="/toys">All Toys</NavLink>
           <NavLink to="/toys/new">Create a Toy</NavLink>
-          <NavLink to="/signin">Sign In</NavLink>
+          <NavLink to="/sign-in">Sign In</NavLink>
           <NavBtn>
             <NavBtnLink to="/sign-up">Sign Up</NavBtnLink>
           </NavBtn>
