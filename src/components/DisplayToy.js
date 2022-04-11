@@ -5,11 +5,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteToy } from '../actions/deleteToy.js';
 import { selectToy } from '../selectors/toySelectors';
 import { useHistory } from 'react-router';
+import { useParams } from 'react-router-dom';
 
-const DisplayToy = (props) => {
+const DisplayToy = () => {
   const dispatch = useDispatch();
+  const {id} = useParams();
 
-  const toy = useSelector(selectToy(props.match.params.id));
+  const toy = useSelector(selectToy(id));
 
   const history = useHistory();
 
@@ -24,7 +26,6 @@ const DisplayToy = (props) => {
         </Button>
         <ReviewsContainer toy={toy} />
       </div>
-      )
     </Container>
   );
 };
