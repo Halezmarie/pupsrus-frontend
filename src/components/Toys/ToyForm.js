@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { createToy } from '../actions/createToy';
+import { createToy } from '../../actions/createToy';
 
 const ToyForm = () => {
   const dispatch = useDispatch();

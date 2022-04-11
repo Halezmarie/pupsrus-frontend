@@ -13,5 +13,5 @@ export const createToy = (toydata) => {
       dispatch({ type: 'CREATE_TOY', payload: toy });
     })
     .catch((err) => alert(err));
-};
+  };
 };

@@ -1,9 +1,9 @@
 import React from 'react';
-import ReviewsContainer from '../containers/ReviewsContainer';
+import ReviewsContainer from '../../containers/ReviewsContainer';
 import { Container, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteToy } from '../actions/deleteToy.js';
-import { selectToy } from '../selectors/toySelectors';
+import { deleteToy } from '../../actions/deleteToy.js';
+import { selectToy } from '../../selectors/toySelectors';
 import { useParams } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { createReview } from '../actions/createReview';
+import { createReview } from '../../actions/createReview';
 
 const ReviewForm = ({ toy }) => {
   const dispatch = useDispatch();
