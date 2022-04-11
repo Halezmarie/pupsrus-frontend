@@ -1,18 +1,15 @@
 import React from 'react';
-import ToysContainer from './containers/ToysContainer'
+import ToysContainer from './containers/ToysContainer';
 import './App.css';
-import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages';
 import About from './pages/about';
 import SignUp from './pages/signup';
 import SignIn from './pages/signin';
 
-class App extends React.Component {
-
-  render() {
-    return (
-      <Router>
+const App = () => (
+  <Router>
       <div>
         <Navbar />
         <ToysContainer />
@@ -23,9 +20,7 @@ class App extends React.Component {
           <Route path="/sign-up" component={SignUp} />
         </Switch>
       </div>
-      </Router>
-    );
-  }
-}
+    </Router>
+  );
 
 export default App;
