@@ -8,9 +8,8 @@ import About from './pages/about';
 import SignUp from './pages/signup';
 import SignIn from './pages/signin';
 
-const App = () => {
-  return (
-    <Router>
+const App = () => (
+  <Router>
       <div>
         <Navbar />
         <ToysContainer />
@@ -23,6 +22,5 @@ const App = () => {
       </div>
     </Router>
   );
-};
 
 export default App;
