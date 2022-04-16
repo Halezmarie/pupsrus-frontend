@@ -2,13 +2,13 @@ export const selectToys = ({ toys }) => toys;
 export const selectToy = (toyId) => ({ toys }) => toys.find((toy) => toy.id === Number(toyId));
 
 export const searchToysSelector =
-  (sortDirection, reviewFilter, searchTerm) =>
+  (sortDirection, reviewFilter, searchInput) =>
   ({ toys }) => {
     let results = Object.assign([], toys);
 
-    if (searchTerm)
+    if (searchInput)
       results = results.filter((toy) =>
-        toy.name.toLowerCase().includes(searchTerm.toLowerCase())
+        toy.name.toLowerCase().includes(searchInput.toLowerCase())
       );
 
     if (reviewFilter === 'on')
