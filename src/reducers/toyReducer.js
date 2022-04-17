@@ -11,7 +11,7 @@ export default function toyReducer(state = initialState, action) {
       return { ...state, toys: [...state.toys, action.payload] };
     case 'CREATE_REVIEW':
       toys = state.toys.map(toy =>
-        toy.id == action.payload.id ? action.payload : toys
+        toy.id === action.payload.id ? action.payload : toys
       );
       return { ...state, toys };
     case 'DELETE_REVIEW':
