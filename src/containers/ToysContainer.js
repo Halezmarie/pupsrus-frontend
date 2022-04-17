@@ -11,7 +11,7 @@ const ToysContainer = () => {
 
   useEffect(() => {
     dispatch(fetchToys());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
